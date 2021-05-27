@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import about from "../../videos/about..mp4";
 import {Container} from "@material-ui/core"
 import {NavLink} from "react-router-dom";
@@ -10,10 +10,19 @@ import MailIcon from '@material-ui/icons/Mail'
 import i from "../../images/i.jpg";
 import skill from "../../images/skill.jpg";
 
+import ReactLoading from "react-loading";
+
+
 function About(){
+  const [done,setDone] = useState(true);
+
+  setTimeout(() => {  setDone(false) }, 4000);
   return(
-    <>
-      <video autoPlay loop muted className="bg-video about-video">
+    <>{
+      done ? <div className="loading-screen"> <ReactLoading className="" type={"cylon"} color={"aqua"} height={200} width={200} /></div>
+      :  
+      <div>
+        <video autoPlay loop muted className="bg-video about-video">
         <source src={about} type="video/mp4" />
       </video>
       <section>
@@ -58,6 +67,8 @@ function About(){
                     <div className="footer-btn"><a href="mailto:anandhu4310@gmail.com" style={{color:"white"}}><MailIcon fontSize="large"/></a></div>
                 </div>
       </section>
+      </div>
+      }
     </>
   )
 

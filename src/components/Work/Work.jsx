@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import work from "../../videos/bg1.mp4";
 import {NavLink} from "react-router-dom";
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
@@ -9,9 +9,18 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MailIcon from '@material-ui/icons/Mail';
 
+import ReactLoading from "react-loading";
+
 function Work(){
+  const [done,setDone] = useState(true);
+
+  setTimeout(() => {  setDone(false) }, 4000);
     return(
         <>
+        {
+          done ?<div className="loading-screen"> <ReactLoading type={"cylon"} color={"aqua"} height={200} width={200} /></div>
+           :  
+          <div>
         <video autoPlay loop muted className="bgwork-video">
             <source src={work} type="video/mp4" />
         </video>
@@ -26,8 +35,8 @@ function Work(){
                 <h1 className="project-heading">{card.title}</h1>
                 <p className="project-dis">{card.content}
                 </p>
-                <a href={card.link} className="button button2 s-btn">Source</a>
-                <a href={card.live} className="button button2 l-btn">Live</a>
+                <a href={card.link} target="_blank"  rel="noreferrer" className="button button2 s-btn">Source</a>
+                <a href={card.live} target="_blank"  rel="noreferrer" className="button button2 l-btn">Live</a>
 
               </div>
               <div className="col-lg-6 work-col">
@@ -43,6 +52,8 @@ function Work(){
                 </div>
         </Container>
         </section>
+        </div>
+}
         </>
     )
 }
