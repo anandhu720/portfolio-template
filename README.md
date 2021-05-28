@@ -7,4 +7,4 @@ http://anandhu-aef3c.firebaseapp.com/
 
 ## new website
 
-https://festive-engelbart-8a4830.netlify.app
+https://anandhakrishnanvk-f49df.web.app
