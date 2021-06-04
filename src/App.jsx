@@ -3,7 +3,7 @@ import {Switch , Route, Redirect } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Home from "./components/Home/Home.jsx";
-import Work from "./components/Work/Work.jsx";
+import Work from "./components/Work/Work1.jsx";
 import About from "./components/About/About.jsx";
 
 import ReactLoading from "react-loading";
