@@ -11,6 +11,7 @@ import i from "../../images/i.jpg";
 import skill from "../../images/skill.jpg";
 
 import ReactLoading from "react-loading";
+import Anime from 'react-anime'
 
 
 function About(){
@@ -33,6 +34,11 @@ function About(){
             <div className="row">
               <div className="col-lg-8 work-col">
                 <h1 className="whoami">Who Am I</h1>
+                <Anime
+                      opacity={[0,1]}
+                      duration={[12000]}
+          
+                  >
                 <p className="p-about">My Name is Anandha Krishnan Valiyaveetil Kamalon . I Am from Kerala,India.I am 19 years old now.
                  Currently I am pursuing Bachelor's degree in Computer Engineering at LPU Punjab.I finished my high school education at
                  Kasaragod,Kerala.I passed from there with good marks and i am interested in Programming.Now I am trying to master Web
@@ -40,7 +46,9 @@ function About(){
 
                 </p>
                 <a href="mailto:anandhu4310@gmail.com" className="button s-btn">Contact Me</a>
+                </Anime>
               </div>
+              
               <div className="col-lg-4 work-col">
                 <img src={i} alt="" width="100%" height="100%"/>
               </div>
@@ -51,12 +59,17 @@ function About(){
               </div>
               <div className="col-lg-8 work-col">
                 <h1 className="whoami">My Skills</h1>
+                <Anime
+                      opacity={[0,1]}
+                      duration={[12000]}
+                  >
                 <p className="p-about">
                   I am really interested in Web Development.So now I am focussing on Web Development.Now I Know C++ , HTML ,
                   CSS , JavaScript and little bit Python.I am also good at DSA in C++.Now I am working with ReactJS framework.It is really wonderful.This 
                   website is also created by ReactJS when I studying it.
                 </p>
                 <NavLink to="/work" className="button s-btn">Projects</NavLink>
+                </Anime>
               </div>
             </div>
         </Container>

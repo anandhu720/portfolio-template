@@ -13,7 +13,7 @@ import ReactLoading from "react-loading";
 import {NavLink} from "react-router-dom";
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import cards from "../../card.js";
-
+import Anime from 'react-anime'
 
 const useStyles = makeStyles({
 
@@ -49,7 +49,11 @@ export default function MediaCard() {
     <div className="row">    
     {cards.map((card) => 
         <div className='col-lg-4 col-md-6 col-sm-10'>
-    <Card className="root12">
+          <Anime
+              opacity={[0,1]}
+              duration={[12000]}
+          >
+          <Card className="root12">
     <CardActionArea>
       <CardMedia
         className={classes.media}
@@ -69,6 +73,7 @@ export default function MediaCard() {
     <a href={card.live} target="_blank"  rel="noreferrer" className="button10">Live</a>
     </CardActions>
   </Card>
+    </Anime>
     </div>
     
     )}
